@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet01 : MonoBehaviour
+public class Bullet04 : MonoBehaviour
 {
     [SerializeField] float speed = 0;
 
     Transform m_Target = null;
-    Vector3 dir = Vector3.forward;
 
     public void Initialize(Transform target)
     {
@@ -19,12 +18,6 @@ public class Bullet01 : MonoBehaviour
 
     private void Update()
     {
-        Move();
-    }
-
-    void Move()
-    {
-        //transform.position += dir * speed * Time.deltaTime;
-        transform.Translate(dir * speed * Time.deltaTime, Space.Self);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);  
     }
 }
